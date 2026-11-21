@@ -1,30 +1,30 @@
-# Scatter Future Privacy Policy
+# Pianyu Privacy Policy
 
 ---
 
-- Last updated: November 20, 2026
-- Effective date: November 20, 2026
+- Last updated: November 21, 2026
+- Effective date: November 21, 2026
 
 ---
 
 ## Introduction
 
-Scatter Future (the "App") takes your privacy seriously. This policy explains how the App handles your information and what rights you have over your data.
+Pianyu (the "App") helps you browse, organize, and sort your photos. We take your privacy seriously. This policy explains what information the App handles, how it is handled, and what rights you have over your data.
 
 Please read this policy carefully before using the App. By starting to use the App, you confirm that you understand and agree to this policy.
 
-## 1. Information We Collect and Store
+## 1. Information We Handle
 
-1. **Data you create**: asset information, account books and bill records, categories, savings plans, nickname, avatar, and notes. By default, this data is stored only on your device.
-2. **Membership purchase information**: memberships are purchased through Apple App Store in-app purchase. We do not collect or store your bank card or other payment information. We only store the membership expiration date locally to unlock membership features.
-3. **Photo library access**: only when you change your avatar or a category icon, and only after your authorization, do we read the image you select.
-4. **Notification permission**: only when you enable features such as bill reminders. Notifications are generated locally by the system and are not used for advertising.
-5. **iCloud sync and backup**: only when you actively enable iCloud or the App's cloud sync feature will data be synced between your devices through Apple iCloud.
-6. **Shortcuts**: if you use system Shortcuts to record bills, data is passed locally through an App Group and is not uploaded to any server.
+1. **Photos and videos**: after you grant access to your photo library, the App reads the photos and videos you select in order to browse, organize, sort, and create albums. Photos are processed and stored locally on your device by default; we do not upload your photos to our servers.
+2. **Metadata in your photos**: information such as capture time and location embedded in your photos, used to organize and search photos by time and place. The App does not separately collect your real-time location.
+3. **Data you create**: album names, favorites, organization records, and preferences. By default, this data is stored only on your device.
+4. **Membership purchase information**: memberships are purchased through Apple App Store in-app purchase. We do not collect or store your bank card or other payment information. We only store your membership status locally to unlock membership features.
+5. **iCloud sync and backup**: only when you actively enable iCloud or the related feature in the App will data be synced between your devices through Apple iCloud.
+6. **Notification permission**: only when you enable features such as organization reminders. Notifications are generated locally by the system and are not used for advertising.
 
 ## 2. How We Use This Information
 
-We use this information only to provide core features such as recording, statistics, sync, reminders, and membership benefits. We do not use it for personalized advertising, and we do not sell or share your personal data with any third party.
+We use this information only to provide core features such as photo browsing, organizing and sorting, album management, search, sync, and membership benefits. We do not use it for personalized advertising, and we do not sell or share your personal data with any third party.
 
 ## 3. Third-Party Services
 
@@ -35,15 +35,15 @@ The App does not integrate third-party advertising or analytics SDKs.
 
 ## 4. Data Storage and Deletion
 
-1. Data is stored on your device; if iCloud sync is enabled, it is also stored in your iCloud account.
-2. You can delete individual records in the App, or clear all data under "Settings - Data Management".
-3. Uninstalling the App deletes local data; iCloud backups must be managed in "Settings - Apple ID - iCloud".
+1. Photos and organization data are stored on your device; if iCloud sync is enabled, they are also stored in your iCloud account.
+2. You can remove favorites, delete albums or organization records, or clear the App's local data within the App.
+3. Uninstalling the App deletes the App's local data; photos in your device's photo library are not deleted by uninstalling the App. iCloud backups must be managed in "Settings - Apple ID - iCloud".
 
 ## 5. Permissions
 
-1. **Photo Library**: used to choose an avatar and category icons.
-2. **Notifications**: used for local reminders such as bill reminders.
-3. **Face ID / Touch ID**: if you enable the passcode lock, used only to unlock the App on this device. Biometric information is handled by the system and never leaves your device.
+1. **Photo Library**: used to read and organize photos and videos; if you use save or export features, write access to the photo library may also be required.
+2. **Notifications**: used for local reminders such as organization reminders.
+3. **Face ID / Touch ID**: if you enable the app lock, used only to unlock the App on this device. Biometric information is handled by the system and never leaves your device.
 
 ## 6. Children's Privacy
 

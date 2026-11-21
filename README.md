@@ -1,11 +1,11 @@
-# 散点未来 · 隐私政策与用户协议
+# 片屿 · 隐私政策与用户协议
 
-用 [VitePress](https://vitepress.dev) 搭建的静态站点，承载散点未来 App 的：
+用 [VitePress](https://vitepress.dev) 搭建的静态站点，承载片屿 App 的：
 
 - 隐私政策（`/privacy`）
 - 用户协议（`/terms`）
 
-线上地址：<https://flyrees.github.io/scatterfuture/>
+线上地址：<https://flyrees.github.io/scatterphoto/>
 
 所有内容都是 Markdown，构建后是纯静态 HTML，部署在 GitHub Pages。
 
@@ -24,10 +24,11 @@ npm run preview  # 预览构建结果
 docs/
 ├── .vitepress/config.mts    # 站点配置：标题、导航、logo
 ├── .vitepress/theme/        # 字体与配色
-├── public/logo.png          # 散点未来 logo（App 图标）
+├── public/logo.png          # 片屿 logo（App 图标）
 ├── index.md                 # 首页
 ├── privacy.md               # 隐私政策
-└── terms.md                 # 用户协议
+├── terms.md                 # 用户协议
+└── en/                      # 英文版
 .github/workflows/deploy.yml # 推送 main 自动部署到 Pages
 ```
 
@@ -51,8 +52,8 @@ docs/
 | --- | --- |
 | 页面底色 | `#f5f7f9` 浅冷灰 |
 | 内容卡片 | 纯白，圆角 12px，柔和投影 |
-| 主色 | `#4f7bf2`（与 App 图标一致；正文链接用 `#2557c9` 保证对比度） |
-| 正文 | `#555`，行高 1.95 |
+| 主色 | `#1e9bf0` 亮蓝（取自 App 图标；正文链接用 `#0b6bcc` 保证对比度） |
+| 正文 | `#1f2329`，行高 1.7 |
 | 字体 | Lato（拉丁）+ PingFang SC |
 
 改主题色换 `:root` 里的 `--vp-c-brand-*` 变量；深色模式在 `.dark` 块里单独一套值。字体用 `@fontsource/lato` 本地打包，不依赖 Google Fonts。

@@ -1,5 +1,5 @@
 /**
- * 散点未来文档站
+ * 片屿文档站
  * 白底、大留白、清晰排版：接近系统文档的阅读体验。
  */
 
@@ -9,11 +9,11 @@
     'Hiragino Sans GB', 'Microsoft YaHei', 'Lato', sans-serif;
   --vp-font-family-mono: 'SF Mono', Menlo, Consolas, 'PingFang SC', monospace;
 
-  /* 品牌色：与 App 图标一致 */
-  --vp-c-brand-1: #2557c9;
-  --vp-c-brand-2: #1f4bb0;
-  --vp-c-brand-3: #4f7bf2;
-  --vp-c-brand-soft: rgba(79, 123, 242, 0.1);
+  /* 品牌色：取自 App 图标的蓝 */
+  --vp-c-brand-1: #0b6bcc;
+  --vp-c-brand-2: #0957a8;
+  --vp-c-brand-3: #1e9bf0;
+  --vp-c-brand-soft: rgba(30, 155, 240, 0.1);
 
   /* 背景：纯白 */
   --vp-c-bg: #ffffff;
@@ -37,15 +37,15 @@
   --vp-sidebar-width: 264px;
 
   /* 代码 */
-  --vp-code-color: #2557c9;
-  --vp-code-bg: rgba(79, 123, 242, 0.08);
+  --vp-code-color: #0b6bcc;
+  --vp-code-bg: rgba(30, 155, 240, 0.08);
 
   /* 按钮 */
   --vp-button-brand-border: transparent;
   --vp-button-brand-text: #ffffff;
-  --vp-button-brand-bg: #4f7bf2;
-  --vp-button-brand-hover-bg: #3f6ae0;
-  --vp-button-brand-active-bg: #2557c9;
+  --vp-button-brand-bg: #1e9bf0;
+  --vp-button-brand-hover-bg: #1489da;
+  --vp-button-brand-active-bg: #0b6bcc;
 }
 
 .dark {
@@ -62,15 +62,15 @@
   --vp-c-border: #23272e;
   --vp-c-gutter: #23272e;
 
-  --vp-c-brand-1: #8fabff;
-  --vp-c-brand-2: #a9bdff;
-  --vp-c-brand-3: #4f7bf2;
+  --vp-c-brand-1: #7cc8ff;
+  --vp-c-brand-2: #a5d9ff;
+  --vp-c-brand-3: #1e9bf0;
 
   --vp-nav-bg-color: rgba(15, 17, 21, 0.9);
   --vp-sidebar-bg-color: #0f1115;
 
-  --vp-code-color: #8fabff;
-  --vp-code-bg: rgba(79, 123, 242, 0.16);
+  --vp-code-color: #7cc8ff;
+  --vp-code-bg: rgba(30, 155, 240, 0.16);
 }
 
 /* ---------- 导航栏 ---------- */

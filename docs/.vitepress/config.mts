@@ -1,13 +1,13 @@
 import { defineConfig } from 'vitepress'
 
-// 部署到 GitHub Pages 的项目站点时，路径会带仓库名（如 /scatterfuture/）。
+// 部署到 GitHub Pages 的项目站点时，路径会带仓库名（如 /scatterphoto/）。
 // 工作流里会自动注入 BASE_PATH，本地开发时默认是 '/'。
 const base = process.env.BASE_PATH || '/'
 
 export default defineConfig({
   lang: 'zh-CN',
-  title: '散点未来',
-  description: '散点未来隐私政策与用户协议',
+  title: '片屿',
+  description: '片屿隐私政策与用户协议',
 
   base,
   cleanUrls: true,       // 生成 /privacy 而不是 /privacy.html
@@ -19,10 +19,10 @@ export default defineConfig({
     root: {
       label: '简体中文',
       lang: 'zh-CN',
-      title: '散点未来',
-      description: '散点未来隐私政策与用户协议',
+      title: '片屿',
+      description: '片屿隐私政策与用户协议',
       themeConfig: {
-        siteTitle: '散点未来',
+        siteTitle: '片屿',
         sidebar: [
           {
             text: '📄 法律条款',
@@ -44,11 +44,11 @@ export default defineConfig({
     en: {
       label: 'English',
       lang: 'en-US',
-      title: 'Scatter Future',
-      description: 'Scatter Future Privacy Policy and User Agreement',
+      title: 'Pianyu',
+      description: 'Pianyu Privacy Policy and User Agreement',
       link: '/en/',
       themeConfig: {
-        siteTitle: 'Scatter Future',
+        siteTitle: 'Pianyu',
         sidebar: [
           {
             text: '📄 Legal',
@@ -71,10 +71,10 @@ export default defineConfig({
 
   head: [
     ['link', { rel: 'icon', type: 'image/png', href: `${base}logo.png` }],
-    ['meta', { name: 'theme-color', content: '#4F7BF2' }],
+    ['meta', { name: 'theme-color', content: '#1E9BF0' }],
     ['meta', { property: 'og:type', content: 'website' }],
-    ['meta', { property: 'og:title', content: '散点未来 · Scatter Future' }],
-    ['meta', { property: 'og:description', content: '散点未来隐私政策与用户协议 · Privacy Policy & User Agreement' }],
+    ['meta', { property: 'og:title', content: '片屿 · Pianyu' }],
+    ['meta', { property: 'og:description', content: '片屿隐私政策与用户协议 · Privacy Policy & User Agreement' }],
     ['meta', { property: 'og:image', content: `${base}logo.png` }]
   ],
 
