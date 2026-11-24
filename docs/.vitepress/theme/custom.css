@@ -392,8 +392,10 @@ html[lang^='en'] .VPNavBarTranslations .button .text::before {
 
   /* 不显示任何选中/按压的灰色底 */
   .doc-drawer-button:hover,
-  .doc-drawer-button:active {
+  .doc-drawer-button:active,
+  .doc-drawer-button:focus {
     background-color: transparent;
+    outline: none;
   }
 
   .doc-drawer-button:focus-visible {

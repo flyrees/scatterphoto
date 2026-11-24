@@ -4,9 +4,11 @@
  * 复用 VitePress 左侧栏抽屉（含站点导航 + 页内目录），
  * 通过触发隐藏的 VPLocalNav「菜单」按钮打开。
  */
-function openDrawer(): void {
+function openDrawer(event: MouseEvent): void {
   const menuButton = document.querySelector<HTMLButtonElement>('.VPLocalNav .menu')
   menuButton?.click()
+  // 系统/浏览器会给聚焦的按钮画一层选中底色，触发后立即移除焦点
+  ;(event.currentTarget as HTMLElement | null)?.blur()
 }
 </script>
 
