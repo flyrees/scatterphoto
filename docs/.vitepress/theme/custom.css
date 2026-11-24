@@ -95,19 +95,22 @@
   border-radius: 7px;
 }
 
-/* 语言切换：圆角胶囊，只保留一个下拉箭头 */
+/* 语言切换：只保留文字和下拉箭头，不显示任何底色 */
 .VPNavBar .VPNavBarTranslations .option-icon {
   display: none;
 }
 
 .VPNavBar .VPNavBarTranslations .button {
   padding: 6px 10px;
-  border-radius: 999px;
-  transition: background-color 0.2s;
+  border-radius: 0;
+  background: transparent;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.VPNavBar .VPNavBarTranslations .button:hover {
-  background-color: var(--vp-c-default-soft);
+.VPNavBar .VPNavBarTranslations .button:hover,
+.VPNavBar .VPNavBarTranslations .button:active,
+.VPNavBar .VPNavBarTranslations .button:focus {
+  background: transparent;
 }
 
 .VPNavBar .VPNavBarTranslations .button .text {
@@ -138,6 +141,17 @@ html[lang^='en'] .VPNavBarTranslations .button .text::before {
 .VPSidebar {
   padding-top: 24px;
   border-right: 1px solid var(--vp-c-divider);
+}
+
+/* 点击目录项时只改变文字颜色，不要整行高亮 */
+.VPSidebar a,
+.VPSidebar .item,
+.doc-toc__link {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.VPSidebar .VPSidebarItem .item:hover {
+  background: transparent;
 }
 
 /* VitePress 组件样式带 scoped 属性，权重更高，这里用更高的选择器覆盖 */
@@ -368,7 +382,7 @@ html[lang^='en'] .VPNavBarTranslations .button .text::before {
 
   /* 目录按钮独立定位，点击/高亮只作用于三条横杠本身 */
   .VPNavBarTitle .title {
-    margin-left: 46px;
+    margin-left: 58px;
     padding-left: 0;
     -webkit-tap-highlight-color: transparent;
   }
@@ -421,13 +435,12 @@ html[lang^='en'] .VPNavBarTranslations .button .text::before {
   display: flex !important;
 }
 
-/* 搜索与语言切换之间收紧间距 */
-@media (max-width: 767px) {
-  .VPNavBarSearch .DocSearch-Button {
-    width: 30px !important;
-    justify-content: center;
-  }
+/* 用导航栏内联搜索替代 VitePress 的全屏搜索框 */
+.VPNavBarSearch {
+  display: none !important;
+}
 
+@media (max-width: 767px) {
   .VPNavBar .VPNavBarTranslations {
     margin-left: -4px;
   }
@@ -435,6 +448,125 @@ html[lang^='en'] .VPNavBarTranslations .button .text::before {
   .VPNavBar .VPNavBarTranslations .button {
     padding: 5px 8px 5px 6px;
   }
+}
+
+/* ---------- 导航内联搜索 ---------- */
+
+.inline-search {
+  display: flex;
+  align-items: center;
+}
+
+.inline-search__toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 40px;
+  background: transparent;
+  color: var(--vp-c-text-1);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.inline-search__toggle:hover,
+.inline-search__toggle:active,
+.inline-search__toggle:focus {
+  background: transparent;
+  outline: none;
+}
+
+.inline-search--open .inline-search__toggle {
+  visibility: hidden;
+}
+
+.inline-search__overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  background: transparent;
+}
+
+.inline-search__panel {
+  position: absolute;
+  top: 11px;
+  right: 10px;
+  z-index: 45;
+  width: min(52vw, 240px);
+}
+
+.inline-search__box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 42px;
+  padding: 0 14px;
+  border: 1.5px solid #1e9efd;
+  border-radius: 21px;
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-3);
+}
+
+.inline-search__input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font-family: inherit;
+  font-size: 15px;
+  color: var(--vp-c-text-1);
+}
+
+.inline-search__input::placeholder {
+  color: var(--vp-c-text-3);
+}
+
+.inline-search__results {
+  margin-top: 8px;
+  max-height: 60vh;
+  overflow-y: auto;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 14px;
+  background: var(--vp-c-bg);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.16);
+}
+
+.inline-search__result {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--vp-c-divider);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.inline-search__result:last-child {
+  border-bottom: none;
+}
+
+.inline-search__result:hover {
+  background: var(--vp-c-bg-soft);
+}
+
+.inline-search__result-title {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--vp-c-text-1);
+}
+
+.inline-search__result-page {
+  font-size: 12px;
+  color: var(--vp-c-text-3);
+}
+
+.inline-search__empty {
+  margin-top: 8px;
+  padding: 14px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 14px;
+  background: var(--vp-c-bg);
+  font-size: 14px;
+  color: var(--vp-c-text-2);
 }
 
 /* ---------- 抽屉里的页内目录 ---------- */

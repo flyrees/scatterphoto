@@ -20,16 +20,16 @@ function openDrawer(event: MouseEvent): void {
     @click.stop="openDrawer"
   >
     <svg
-      width="24"
-      height="24"
+      width="20"
+      height="20"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      stroke-width="2.4"
+      stroke-width="2.6"
       stroke-linecap="round"
       aria-hidden="true"
     >
-      <path d="M3 6.5h18M3 12h18M3 17.5h18" />
+      <path d="M5 7h14M5 12h14M5 17h14" />
     </svg>
   </button>
 </template>

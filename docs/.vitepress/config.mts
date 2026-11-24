@@ -33,33 +33,6 @@ export default defineConfig({
           { text: '隐私政策', link: '/privacy' },
           { text: '用户协议', link: '/terms' }
         ],
-        // 站内搜索：显示在导航右侧、语言切换按钮的左边
-        search: {
-          provider: 'local',
-          options: {
-            translations: {
-              button: {
-                buttonText: '搜索',
-                buttonAriaLabel: '搜索'
-              },
-              modal: {
-                displayDetails: '显示详细列表',
-                resetButtonTitle: '清除查询条件',
-                backButtonTitle: '返回',
-                noResultsText: '没有找到相关结果',
-                footer: {
-                  selectText: '选择',
-                  selectKeyAriaLabel: '回车',
-                  navigateText: '切换',
-                  navigateUpKeyAriaLabel: '向上箭头',
-                  navigateDownKeyAriaLabel: '向下箭头',
-                  closeText: '关闭',
-                  closeKeyAriaLabel: 'Esc'
-                }
-              }
-            }
-          }
-        },
         returnToTopLabel: '回到顶部',
         sidebarMenuLabel: '菜单',
         langMenuLabel: '切换语言',
@@ -82,32 +55,6 @@ export default defineConfig({
           { text: 'Privacy Policy', link: '/en/privacy' },
           { text: 'User Agreement', link: '/en/terms' }
         ],
-        search: {
-          provider: 'local',
-          options: {
-            translations: {
-              button: {
-                buttonText: 'Search',
-                buttonAriaLabel: 'Search'
-              },
-              modal: {
-                displayDetails: 'Display detailed list',
-                resetButtonTitle: 'Reset search',
-                backButtonTitle: 'Back',
-                noResultsText: 'No results for',
-                footer: {
-                  selectText: 'to select',
-                  selectKeyAriaLabel: 'Enter',
-                  navigateText: 'to navigate',
-                  navigateUpKeyAriaLabel: 'Up arrow',
-                  navigateDownKeyAriaLabel: 'Down arrow',
-                  closeText: 'to close',
-                  closeKeyAriaLabel: 'Escape'
-                }
-              }
-            }
-          }
-        },
         returnToTopLabel: 'Return to top',
         sidebarMenuLabel: 'Menu',
         langMenuLabel: 'Change language',
@@ -132,10 +79,6 @@ export default defineConfig({
     logo: '/logo.png',
     aside: false,
     // 只为抽屉里的页内目录收集二级标题；桌面端右侧大纲仍不显示
-    outline: [2, 2],
-    // 站内搜索开关需要放在全局 themeConfig 才会生成本地索引；各语言文案在对应 locale 里
-    search: {
-      provider: 'local'
-    }
+    outline: [2, 2]
   }
 })
