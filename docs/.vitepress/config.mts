@@ -142,6 +142,10 @@ export default defineConfig({
     logo: '/logo.png',
     aside: false,
     // 只为抽屉里的页内目录收集二级标题；桌面端右侧大纲仍不显示
-    outline: [2, 2]
+    outline: [2, 2],
+    // 站内搜索开关需要放在全局 themeConfig 才会生成本地索引；各语言文案在对应 locale 里
+    search: {
+      provider: 'local'
+    }
   }
 })
