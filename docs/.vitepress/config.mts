@@ -14,6 +14,11 @@ export default defineConfig({
   lastUpdated: true,     // 显示"最后更新于"（需要 git 仓库）
   srcExclude: ['**/README.md'],
 
+  // 抽取页内标题，供抽屉里的目录使用
+  markdown: {
+    headers: { level: [2] }
+  },
+
   // 语言切换：中文在根路径，英文在 /en/
   locales: {
     root: {
@@ -136,6 +141,7 @@ export default defineConfig({
   themeConfig: {
     logo: '/logo.png',
     aside: false,
-    outline: false
+    // 只为抽屉里的页内目录收集二级标题；桌面端右侧大纲仍不显示
+    outline: [2, 2]
   }
 })

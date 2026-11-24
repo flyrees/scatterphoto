@@ -369,6 +369,17 @@ html[lang^='en'] .VPNavBarTranslations .button .text::before {
   padding-left: 12px;
 }
 
+/* 窄屏也保留右侧的语言切换按钮（默认只在 ≥1280px 显示） */
+.VPNavBarTranslations {
+  display: flex !important;
+}
+
+@media (max-width: 767px) {
+  .VPNavBarTranslations .button {
+    padding: 0 6px;
+  }
+}
+
 /* ---------- 抽屉里的页内目录 ---------- */
 
 .doc-toc {
