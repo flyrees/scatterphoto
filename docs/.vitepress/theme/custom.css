@@ -159,10 +159,10 @@ html[lang^='en'] .VPNavBarTranslations .button .text::before {
 }
 
 .VPSidebar .VPSidebarItem.level-1 > .item .text {
-  font-size: 17px !important;
+  font-size: 19px !important;
   font-weight: 500 !important;
   line-height: 1.5 !important;
-  padding: 9px 0 !important;
+  padding: 10px 0 !important;
   color: var(--vp-c-text-1) !important;
 }
 
@@ -390,10 +390,10 @@ html[lang^='en'] .VPNavBarTranslations .button .text::before {
     transition: background-color 0.2s;
   }
 
+  /* 不显示任何选中/按压的灰色底 */
   .doc-drawer-button:hover,
-  .doc-drawer-button:focus-visible,
   .doc-drawer-button:active {
-    background-color: var(--vp-c-default-soft);
+    background-color: transparent;
   }
 
   .doc-drawer-button:focus-visible {
@@ -444,8 +444,8 @@ html[lang^='en'] .VPNavBarTranslations .button .text::before {
 }
 
 .doc-toc__title {
-  margin: 0 0 12px;
-  font-size: 20px;
+  margin: 0 0 14px;
+  font-size: 22px;
   font-weight: 700;
   line-height: 1.4;
   color: var(--vp-c-text-1);
@@ -453,10 +453,10 @@ html[lang^='en'] .VPNavBarTranslations .button .text::before {
 
 .doc-toc__link {
   display: block;
-  padding: 8px 0 8px 20px;
-  font-size: 16px;
+  padding: 9px 0 9px 20px;
+  font-size: 18px;
   line-height: 1.5;
-  color: var(--vp-c-text-2);
+  color: var(--vp-c-text-1);
   transition: color 0.2s;
 }
 

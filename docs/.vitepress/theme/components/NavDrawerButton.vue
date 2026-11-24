@@ -18,16 +18,16 @@ function openDrawer(): void {
     @click.stop="openDrawer"
   >
     <svg
-      width="22"
-      height="22"
+      width="24"
+      height="24"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      stroke-width="2.8"
+      stroke-width="2.4"
       stroke-linecap="round"
       aria-hidden="true"
     >
-      <path d="M4 6.5h16M4 12h16M4 17.5h16" />
+      <path d="M3 6.5h18M3 12h18M3 17.5h18" />
     </svg>
   </button>
 </template>
