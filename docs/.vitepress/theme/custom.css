@@ -310,3 +310,97 @@ html[lang^='en'] .VPNavBarTranslations .button .text::before {
     margin-top: 30px;
   }
 }
+
+/* ---------- 导航：目录按钮与搜索 ---------- */
+
+/* logo 左侧的目录按钮（桌面端由左侧栏承担，无需显示） */
+.doc-drawer-button {
+  display: none;
+}
+
+@media (max-width: 959px) {
+  /* 不再使用默认的右侧汉堡菜单和“菜单”横条 */
+  .VPNavBarHamburger,
+  .VPLocalNav {
+    display: none !important;
+  }
+
+  .doc-drawer-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin-right: 2px;
+    border-radius: 20px;
+    color: var(--vp-c-text-1);
+    transition: background-color 0.2s;
+  }
+
+  .doc-drawer-button:hover,
+  .doc-drawer-button:focus-visible {
+    background-color: var(--vp-c-default-soft);
+  }
+
+  .doc-drawer-button:focus-visible {
+    outline: 2px solid var(--vp-c-brand-1);
+    outline-offset: 1px;
+  }
+
+  .doc-drawer-button .vpi-align-left {
+    font-size: 22px;
+  }
+
+  /* 抽屉从导航栏下沿展开，导航栏与目录按钮保持可见 */
+  .VPSidebar {
+    top: var(--vp-nav-height);
+    padding: 16px 24px 96px;
+    width: calc(100vw - 64px);
+    max-width: 320px;
+  }
+
+  .VPBackdrop {
+    top: var(--vp-nav-height);
+  }
+}
+
+/* 搜索框在导航右侧，位于语言切换按钮左边（VitePress 默认顺序即如此） */
+.VPNavBarSearch {
+  padding-left: 12px;
+}
+
+/* ---------- 抽屉里的页内目录 ---------- */
+
+.doc-toc {
+  margin-top: 28px;
+  padding-top: 22px;
+  border-top: 1px solid var(--vp-c-divider);
+}
+
+.doc-toc__title {
+  margin: 0 0 10px;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--vp-c-text-1);
+}
+
+.doc-toc__link {
+  display: block;
+  padding: 7px 0 7px 16px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--vp-c-text-2);
+  transition: color 0.2s;
+}
+
+.doc-toc__link:hover {
+  color: var(--vp-c-brand-1);
+}
+
+/* 桌面端目录在左侧栏常驻，抽屉里的页内目录不再重复显示 */
+@media (min-width: 960px) {
+  .doc-toc {
+    display: none;
+  }
+}
