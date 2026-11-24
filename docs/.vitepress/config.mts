@@ -30,13 +30,8 @@ export default defineConfig({
         siteTitle: '片屿',
         sidebar: [
           { text: '开始', link: '/' },
-          {
-            text: '法律条款',
-            items: [
-              { text: '隐私政策', link: '/privacy' },
-              { text: '用户协议', link: '/terms' }
-            ]
-          }
+          { text: '隐私政策', link: '/privacy' },
+          { text: '用户协议', link: '/terms' }
         ],
         // 站内搜索：显示在导航右侧、语言切换按钮的左边
         search: {
@@ -84,13 +79,8 @@ export default defineConfig({
         siteTitle: 'Pianyu',
         sidebar: [
           { text: 'Start', link: '/en/' },
-          {
-            text: 'Legal',
-            items: [
-              { text: 'Privacy Policy', link: '/en/privacy' },
-              { text: 'User Agreement', link: '/en/terms' }
-            ]
-          }
+          { text: 'Privacy Policy', link: '/en/privacy' },
+          { text: 'User Agreement', link: '/en/terms' }
         ],
         search: {
           provider: 'local',

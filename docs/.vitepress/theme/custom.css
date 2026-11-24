@@ -95,15 +95,34 @@
   border-radius: 7px;
 }
 
-/* 语言切换：显示当前语言名称，只保留一个下拉箭头 */
-.VPNavBarTranslations .option-icon {
+/* 语言切换：圆角胶囊，只保留一个下拉箭头 */
+.VPNavBar .VPNavBarTranslations .option-icon {
   display: none;
 }
 
-.VPNavBarTranslations .button .text::before {
-  font-size: 14px;
+.VPNavBar .VPNavBarTranslations .button {
+  padding: 6px 10px;
+  border-radius: 999px;
+  transition: background-color 0.2s;
+}
+
+.VPNavBar .VPNavBarTranslations .button:hover {
+  background-color: var(--vp-c-default-soft);
+}
+
+.VPNavBar .VPNavBarTranslations .button .text {
+  gap: 2px;
+}
+
+.VPNavBar .VPNavBarTranslations .button .text::before {
+  font-size: 13px;
   font-weight: 500;
   color: var(--vp-c-text-2);
+}
+
+.VPNavBar .VPNavBarTranslations .button .text-icon {
+  font-size: 11px;
+  color: var(--vp-c-text-3);
 }
 
 html[lang^='zh'] .VPNavBarTranslations .button .text::before {
@@ -114,36 +133,48 @@ html[lang^='en'] .VPNavBarTranslations .button .text::before {
   content: 'English';
 }
 
-/* ---------- 左侧目录 ---------- */
+/* ---------- 左侧目录（站点菜单 + 页内目录） ---------- */
 
 .VPSidebar {
   padding-top: 24px;
   border-right: 1px solid var(--vp-c-divider);
 }
 
-.VPSidebarItem.level-0 > .item .text {
-  font-size: 18px;
-  font-weight: 600;
+/* VitePress 组件样式带 scoped 属性，权重更高，这里用更高的选择器覆盖 */
+.VPSidebar .VPSidebarItem.level-0 {
+  padding-bottom: 8px !important;
+}
+
+.VPSidebar .VPSidebarItem.level-0 > .item .text {
+  font-size: 19px !important;
+  font-weight: 600 !important;
+  line-height: 1.5 !important;
   color: var(--vp-c-text-1);
 }
 
-.VPSidebarItem.level-0 {
-  padding-bottom: 6px;
+/* 站点菜单是一组平铺链接（VitePress 会包一层无标题的分组），不再额外缩进 */
+.VPSidebar .VPSidebarItem.level-0 > .items {
+  padding-left: 0 !important;
+  margin-top: 2px;
 }
 
-/* 分区下的子项缩进，体现归属关系 */
-.VPSidebarItem.level-0 > .items {
-  padding-left: 16px;
+.VPSidebar .VPSidebarItem.level-1 > .item .text {
+  font-size: 17px !important;
+  font-weight: 500 !important;
+  line-height: 1.5 !important;
+  padding: 9px 0 !important;
+  color: var(--vp-c-text-1) !important;
 }
 
-.VPSidebarItem.level-1 > .item .text {
-  font-size: 15px;
-  line-height: 1.6;
+.VPSidebar .VPSidebarItem.is-active > .item .link > .text {
+  color: var(--vp-c-brand-1) !important;
+  font-weight: 600 !important;
 }
 
-.VPSidebarItem.is-active > .item .text {
-  color: var(--vp-c-brand-1);
-  font-weight: 600;
+/* 分组之间不再画分割线，只保留页内目录前的一条 */
+.VPSidebar .group + .group {
+  border-top: none !important;
+  padding-top: 2px !important;
 }
 
 /* ---------- 正文 ---------- */
@@ -325,14 +356,23 @@ html[lang^='en'] .VPNavBarTranslations .button .text::before {
     display: none !important;
   }
 
+  /* 收紧导航栏两侧留白，让目录按钮更贴近边缘 */
+  .VPNavBar .wrapper {
+    padding: 0 8px 0 10px !important;
+  }
+
+  .VPNavBarTitle .title {
+    padding-left: 0;
+  }
+
   .doc-drawer-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
-    margin-right: 2px;
-    border-radius: 20px;
+    width: 38px;
+    height: 38px;
+    margin-right: 4px;
+    border-radius: 19px;
     color: var(--vp-c-text-1);
     transition: background-color 0.2s;
   }
@@ -353,20 +393,20 @@ html[lang^='en'] .VPNavBarTranslations .button .text::before {
 
   /* 抽屉从导航栏下沿展开，导航栏与目录按钮保持可见 */
   .VPSidebar {
-    top: var(--vp-nav-height);
-    padding: 16px 24px 96px;
-    width: calc(100vw - 64px);
-    max-width: 320px;
+    top: var(--vp-nav-height) !important;
+    padding: 22px 28px 96px !important;
+    width: calc(100vw - 88px) !important;
+    max-width: 320px !important;
   }
 
   .VPBackdrop {
-    top: var(--vp-nav-height);
+    top: var(--vp-nav-height) !important;
   }
 }
 
 /* 搜索框在导航右侧，位于语言切换按钮左边（VitePress 默认顺序即如此） */
 .VPNavBarSearch {
-  padding-left: 12px;
+  padding-left: 8px;
 }
 
 /* 窄屏也保留右侧的语言切换按钮（默认只在 ≥1280px 显示） */
@@ -375,31 +415,31 @@ html[lang^='en'] .VPNavBarTranslations .button .text::before {
 }
 
 @media (max-width: 767px) {
-  .VPNavBarTranslations .button {
-    padding: 0 6px;
+  .VPNavBar .VPNavBarTranslations .button {
+    padding: 5px 8px;
   }
 }
 
 /* ---------- 抽屉里的页内目录 ---------- */
 
 .doc-toc {
-  margin-top: 28px;
+  margin-top: 26px;
   padding-top: 22px;
   border-top: 1px solid var(--vp-c-divider);
 }
 
 .doc-toc__title {
-  margin: 0 0 10px;
-  font-size: 17px;
-  font-weight: 600;
-  line-height: 1.5;
+  margin: 0 0 12px;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.4;
   color: var(--vp-c-text-1);
 }
 
 .doc-toc__link {
   display: block;
-  padding: 7px 0 7px 16px;
-  font-size: 15px;
+  padding: 8px 0 8px 20px;
+  font-size: 16px;
   line-height: 1.5;
   color: var(--vp-c-text-2);
   transition: color 0.2s;
