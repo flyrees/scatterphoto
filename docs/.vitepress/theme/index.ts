@@ -9,8 +9,8 @@ import './custom.css'
 export default {
   extends: DefaultTheme,
   Layout: () => h(DefaultTheme.Layout, null, {
-    // logo 左侧的目录按钮，点击展开左侧抽屉
-    'nav-bar-title-before': () => h(NavDrawerButton),
+    // 目录按钮独立于 logo 链接，点击只高亮按钮本身
+    'nav-bar-content-before': () => h(NavDrawerButton),
     // 抽屉底部追加当前页的页内目录
     'sidebar-nav-after': () => h(PageOutline)
   })

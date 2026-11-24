@@ -167,7 +167,8 @@ html[lang^='en'] .VPNavBarTranslations .button .text::before {
 }
 
 .VPSidebar .VPSidebarItem.is-active > .item .link > .text {
-  color: var(--vp-c-brand-1) !important;
+  /* 与 App 主题色保持一致 */
+  color: #1e9efd !important;
   font-weight: 600 !important;
 }
 
@@ -349,6 +350,10 @@ html[lang^='en'] .VPNavBarTranslations .button .text::before {
   display: none;
 }
 
+.VPNavBar .container {
+  position: relative;
+}
+
 @media (max-width: 959px) {
   /* 不再使用默认的右侧汉堡菜单和“菜单”横条 */
   .VPNavBarHamburger,
@@ -361,34 +366,39 @@ html[lang^='en'] .VPNavBarTranslations .button .text::before {
     padding: 0 8px 0 10px !important;
   }
 
+  /* 目录按钮独立定位，点击/高亮只作用于三条横杠本身 */
   .VPNavBarTitle .title {
+    margin-left: 46px;
     padding-left: 0;
+    -webkit-tap-highlight-color: transparent;
   }
 
   .doc-drawer-button {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 38px;
-    height: 38px;
-    margin-right: 4px;
-    border-radius: 19px;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
     color: var(--vp-c-text-1);
+    -webkit-tap-highlight-color: transparent;
     transition: background-color 0.2s;
   }
 
   .doc-drawer-button:hover,
-  .doc-drawer-button:focus-visible {
+  .doc-drawer-button:focus-visible,
+  .doc-drawer-button:active {
     background-color: var(--vp-c-default-soft);
   }
 
   .doc-drawer-button:focus-visible {
     outline: 2px solid var(--vp-c-brand-1);
     outline-offset: 1px;
-  }
-
-  .doc-drawer-button .vpi-align-left {
-    font-size: 22px;
   }
 
   /* 抽屉从导航栏下沿展开，导航栏与目录按钮保持可见 */
@@ -404,19 +414,24 @@ html[lang^='en'] .VPNavBarTranslations .button .text::before {
   }
 }
 
-/* 搜索框在导航右侧，位于语言切换按钮左边（VitePress 默认顺序即如此） */
-.VPNavBarSearch {
-  padding-left: 8px;
-}
-
 /* 窄屏也保留右侧的语言切换按钮（默认只在 ≥1280px 显示） */
 .VPNavBarTranslations {
   display: flex !important;
 }
 
+/* 搜索与语言切换之间收紧间距 */
 @media (max-width: 767px) {
+  .VPNavBarSearch .DocSearch-Button {
+    width: 30px !important;
+    justify-content: center;
+  }
+
+  .VPNavBar .VPNavBarTranslations {
+    margin-left: -4px;
+  }
+
   .VPNavBar .VPNavBarTranslations .button {
-    padding: 5px 8px;
+    padding: 5px 8px 5px 6px;
   }
 }
 
